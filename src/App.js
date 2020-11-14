@@ -50,9 +50,9 @@ function App() {
       </div>
 
       <div className="app__stats">
-        <InfoBox title="Covid Cases" cases={12345} total={2020}/>
-        <InfoBox title="Deaths" cases={12345} total={2020}/>
-        <InfoBox title="Recovered" cases={12345} total={2020}/>
+        <InfoBox title="Covid Cases" cases={1234500} total={2020}/>
+        <InfoBox title="Deaths" cases={54321} total={2019}/>
+        <InfoBox title="Recovered" cases={909090} total={2021}/>
       </div>
     </div>
   );
