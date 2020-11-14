@@ -3,9 +3,8 @@ import {MenuItem, FormControl, Select} from "@material-ui/core"
 import { useEffect, useState } from 'react';
 
 function App() {
-  const [countries, setCountries] = useState([
-    'USA', 'UK', 'India'
-  ]);
+  const [countries, setCountries] = useState([]);
+  const [country, setCountry] = useState('worldwide');
 
   useEffect(() => {
 
@@ -19,9 +18,16 @@ function App() {
             value: country.countryInfo.iso2
           }
         ))
+        setCountries(countries)
       })
     }
+    getCountriesData();
   }, []);
+
+  const onCountryChange = (event) => {
+    const countrycode = event.target.value;
+    setCountry(countrycode)
+  }
 
   return (
     <div className="App">
@@ -30,11 +36,12 @@ function App() {
         <FormControl className="app__dropdown">
           <Select
             variant="outlined"
-            value="abc">
-
+            onChange={onCountryChange}
+            value={country}>
+            <MenuItem value="worldwide">Worldwide</MenuItem>
             {
               countries.map(country =>(
-                <MenuItem value={country}>{country}</MenuItem>
+                <MenuItem value={country.value}>{country.name}</MenuItem>
               ))
             }
           </Select>
