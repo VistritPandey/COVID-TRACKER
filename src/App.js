@@ -3,7 +3,7 @@ import {MenuItem, FormControl, Select} from "@material-ui/core"
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
+      <div className="app__header">
         <h1>COVID-19 Tracker</h1>
         <FormControl className="app__dropdown">
           <Select
@@ -15,7 +15,7 @@ function App() {
               <MenuItem value="worldwide">Worldwide</MenuItem>
           </Select>
         </FormControl>
-      </header>
+      </div>
     </div>
   );
 }
