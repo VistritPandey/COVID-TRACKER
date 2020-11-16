@@ -7,6 +7,8 @@ import Map from './Map'
 function App() {
   const [countries, setCountries] = useState([]);
   const [country, setCountry] = useState('worldwide');
+  const [countryInfo, setCountryInfo] = useState({});
+
 
   useEffect(() => {
 
@@ -28,8 +30,20 @@ function App() {
 
   const onCountryChange = (event) => {
     const countrycode = event.target.value;
-    setCountry(countrycode)
-  }
+    setCountry(countrycode);
+
+    const url =
+     countrycode === 'worldwide'
+     ? 'https://disease.sh/v3/covid-19/countries/all'
+     : `https://disease.sh/v3/covid-19/countries/${countrycode}`;
+    
+      await fetch(url)
+      .then(response => response.json())
+      .then(data => {
+          setCountry(countrycode);
+          setCountryInfo(data);
+      })
+  };
 
   return (
     <div className="App">
