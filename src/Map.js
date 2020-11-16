@@ -3,8 +3,8 @@ import './Map.css'
 
 function Map() {
     return (
-        <div>
-            
+        <div className='map'>
+            <h1>Map component</h1>
         </div>
     )
 }
