@@ -13,3 +13,16 @@
     display: flex;
     justify-content: space-between;
 }
+
+
+.App{
+    display: flex;
+    justify-content: space-evenly;
+    padding: 20px;
+}
+
+@media(max-width: 990px){
+    .App{
+        flex-direction: column;
+    }
+}
