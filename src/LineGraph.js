@@ -74,7 +74,6 @@ function LineGraph({ casesType }) {
         .then((data) => {
           let chartData = buildChartData(data, casesType);
           setData(chartData);
-          console.log(chartData);
         });
     };
 
@@ -83,8 +82,10 @@ function LineGraph({ casesType }) {
 
   return (
     <div>
+    <h1>Graph</h1>
       {data?.length > 0 && (
         <Line
+        options={options}
           data={{
             datasets: [
               {
@@ -94,7 +95,7 @@ function LineGraph({ casesType }) {
               },
             ],
           }}
-          options={options}
+          
         />
       )}
     </div>
