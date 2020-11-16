@@ -1,10 +1,15 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Line } from "react-chartjs-2"
 
 function LineGraph() {
+    const [data, setData] =useState({});
+// 
     return (
         <div className='linegraph'>
-            <Line />
+            <Line 
+                data
+                options
+            />
         </div>
     )
 }
