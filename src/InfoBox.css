@@ -1,6 +1,10 @@
 .infoBox {
     flex: 1;
   }
+
+.infoBox:hover{
+  cursor: pointer;
+}
   
   .infoBox:not(:last-child) {
     margin-right: 10px;
